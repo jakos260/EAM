@@ -21,7 +21,9 @@ umiejscowienie czujników
 > piłka
 > >
 > > 16 - kostka
+> > 
 > > 17 - nadgarstek/ kolano(jedna noga Roga)
+> > 
 > > 18 - biodro
 > >
 > gra Kuba
