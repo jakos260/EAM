@@ -16,8 +16,8 @@
 > 
 > S5 - dev_17
 >
-umiejscowienie czujników
->
+
+## Umiejscowienie czujników
 > piłka
 > >
 > > 16 - kostka
@@ -43,9 +43,6 @@ umiejscowienie czujników
 > > 18 - kostka
 > >
 > gra Kost ktoś zapisał? xd
-
-## Umiejscowienie czujników
-
 
 ## Qwaterniony
 > q = (w, r) = (w, Xi, Yj, Zk)
