@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 
 
 
-fig2 = make_subplots(rows=4, cols=1)
+fig2 = make_subplots(rows=4, cols=1, subplot_titles=("Q0", "Q1", "Q2", "Q3"))
 fig2.update_layout(title_text="Quaternions")
 
 # ścieżka danych
@@ -19,6 +19,7 @@ types = ["bez oczu dwie", "bez oczu jedna", "dwie", "jedna"]
 for t in types:
     dataFrames = os.listdir(os.path.join(dataPath, t))
     for df in dataFrames:
+        name = os.path.splitext(df)[0].split("_")
         print(df)
         V = pd.read_csv(os.path.join(dataPath, t, df))
         print(V.shape)
@@ -26,11 +27,10 @@ for t in types:
         v2 = V['Q1']
         v3 = V['Q2']
         v4 = V['Q3']
-        # jeśli chcemy poszczególne czujniki, to musimy przesunąć fig2.add_trace o jeden TAB w prawo ;)
-    fig2.add_trace(go.Line(x=np.arange(len(v1)), y=v1, name="Q1" + t), row=1, col=1) 
-    fig2.add_trace(go.Line(x=np.arange(len(v2)), y=v2, name="Q2" + t), row=2, col=1)
-    fig2.add_trace(go.Line(x=np.arange(len(v3)), y=v3, name="Q3" + t), row=3, col=1)
-    fig2.add_trace(go.Line(x=np.arange(len(v4)), y=v4, name="Q4" + t), row=4, col=1)
+        fig2.add_trace(go.Line(x=np.arange(len(v1)), y=v1, name=t + name[0]), row=1, col=1) 
+        fig2.add_trace(go.Line(x=np.arange(len(v2)), y=v2, name=t + name[0]), row=2, col=1)
+        fig2.add_trace(go.Line(x=np.arange(len(v3)), y=v3, name=t + name[0]), row=3, col=1)
+        fig2.add_trace(go.Line(x=np.arange(len(v4)), y=v4, name=t + name[0]), row=4, col=1)
 
 # fig2.add_trace(go.Line(x=np.arange(len(v1)), y=v1, name="Q1"), row=1, col=1)
 # fig2.add_trace(go.Line(x=np.arange(len(v2)), y=v2, name="Q2"), row=2, col=1)
@@ -38,5 +38,5 @@ for t in types:
 # fig2.add_trace(go.Line(x=np.arange(len(v4)), y=v4, name="Q4"), row=4, col=1)
 
 
-# fig2.write_html('ECGsygnay.html', auto_open=True) # zapis do pliku html
+# fig2.write_html(os.path.join("qPlots", ""), auto_open=True) # zapis do pliku html
 fig2.show() # tylko wyświetla
