@@ -44,8 +44,8 @@ def pNameAndColor(p, how):
 
 typ = "piłka"
 # howManyLegs = ["jedna", "dwie", "bez oczu jedna", "bez oczu dwie"]
-howManyLegs = ["dwie", "bez oczu dwie"]
-# howManyLegs = ["jedna", "bez oczu jedna"]
+# howManyLegs = ["dwie", "bez oczu dwie"]
+howManyLegs = ["jedna", "bez oczu jedna"]
 # how = howManyLegs[3]
 dataPath = os.path.join("data", typ)
 quaternions = ["Q0", "Q1", "Q2", "Q3"]
@@ -54,7 +54,7 @@ mag = ["MagX", "MagY", "MagZ"]
 people = ["Kost", "Michał", "Rogu"]
 peopleName = ["Osoba 1.", "Osoba 2.", "Osoba 3."]
 # devName = ["dev_16", "dev_17", "dev_18"]
-devName = ["kostka", "nadgarstek", "biodro"]
+devName = ["kostka", "biodro", "nadgarstek"]
 
     
 title = "Mean_FFT_Gyro - " + typ + " " + howManyLegs[0]
