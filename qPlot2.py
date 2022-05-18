@@ -34,7 +34,7 @@ for i, (p) in enumerate(people):
             df = pd.read_csv(os.path.join(filePath, dev))
             for qw_i, (qw) in enumerate(quaternions):
                 print(qw)
-                y = df[qw]
+                y = df[qw]/16384
                 x = np.arange(len(y))
                 fig.add_trace(go.Scatter(x=x, y=y, name=devName, mode='lines', line=dict(color=devColor)), row=qw_i+1, col=i+1)
 
